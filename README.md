@@ -4,8 +4,6 @@ Sharc hardware, firmware, and software related support and discussions.
 ## Table of Contents
 
 - [sharc-support](#sharc-support)
-  - [Table of Contents](#table-of-contents)
-  - [Links](#links)
   - [MQTT Namespace](#mqtt-namespace)
     - [MQTT EVENTS](#mqtt-events)
       - [MQTT Connect](#mqtt-connect)
@@ -34,11 +32,10 @@ Sharc hardware, firmware, and software related support and discussions.
       - [Digital Input - Rising Edge Persisted Counter](#digital-input---rising-edge-persisted-counter)
       - [Digital Input - Falling Edge Accumulator](#digital-input---falling-edge-accumulator)
       - [Analog Input - Custom Conversion](#analog-input---custom-conversion)
-        - [Network Example](#network-example)
-        - [Broker Example](#broker-example)
+      - [Network Example](#network-example)
+      - [Broker Example](#broker-example)
   - [Self-hosting Sharc Studio](#self-hosting-sharc-studio)
     - [If Not Using `localhost` To Connect To Sharc UI, You Must Allow Bluetooth From Insecure Connection](#if-not-using-localhost-to-connect-to-sharc-ui-you-must-allow-bluetooth-from-insecure-connection)
-      - [To enable this setting](#to-enable-this-setting)
     - [To Run Locally (MQTT Broker already setup | Without compose)](#to-run-locally-mqtt-broker-already-setup--without-compose)
     - [To Run Locally (MQTT Broker already setup | With compose)](#to-run-locally-mqtt-broker-already-setup--with-compose)
     - [To Run Locally (MQTT Broker not setup | With docker-compose)](#to-run-locally-mqtt-broker-not-setup--with-docker-compose)
