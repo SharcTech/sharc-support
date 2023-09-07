@@ -11,6 +11,14 @@ Sharc hardware, firmware, and software related support and discussions.
 
 2. [Self-hosting Sharc Studio](#self-hosting-sharc-studio)
 
+    * [Enabling Insecure Connections](#if-not-using-localhost-to-connect-to-sharc-ui-you-must-allow-bluetooth-from-insecure-connection)
+
+    * [Running Locally Without Compose](#to-run-locally-mqtt-broker-already-setup--without-compose)
+
+    * [Running Locally With Compose](#to-run-locally-mqtt-broker-already-setup--with-compose)
+
+    * [Running Locally With Compose + Setting Up Broker](#to-run-locally-mqtt-broker-not-setup--with-docker-compose)
+
 ## Links
 
 [Data Sheet](https://www.mriiot.com/s/SHARC-Data-Sheet-Latest.pdf)  
@@ -640,7 +648,7 @@ Retain: `false`
 5. Navigate to [https://localhost/](https://localhost/) in your browser
 6. If you already have a MQTT Broker set up you are good to go!
 
-### To Run Locally (MQTT Broker already setup | Without compose)
+### To Run Locally (MQTT Broker already setup | With compose)
 1. Ensure you have Docker and Docker Compose installed
     1. If you do not, follow [https://docs.docker.com/](https://docs.docker.com/) installation instructions for your OS
 2. Create a file named `docker-compose.yml`
