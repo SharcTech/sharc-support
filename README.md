@@ -5,9 +5,9 @@ Sharc hardware, firmware, and software related support and discussions.
 
 1. [MQTT Payloads](#mqtt-namespace)
 
-  * [MQTT Events](#mqtt-events)
+     * [MQTT Events](#mqtt-events)
 
-  * [MQTT Commands](#mqtt-commands)
+     * [MQTT Commands](#mqtt-commands)
 
 2. [Self-hosting Sharc Studio](#self-hosting-sharc-studio)
 
