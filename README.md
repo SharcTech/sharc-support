@@ -1,6 +1,12 @@
 # sharc-support
 Sharc hardware, firmware, and software related support and discussions.
 
+## Table of Contents
+[MQTT Payloads](#mqtt-namespace)
+  [MQTT Events](#mqtt-events)
+  [MQTT Commands](#mqtt-commands)
+[Self-hosting Sharc Studio](#self-hosting-sharc-studio)
+
 ## Links
 
 [Data Sheet](https://www.mriiot.com/s/SHARC-Data-Sheet-Latest.pdf)  
