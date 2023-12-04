@@ -36,6 +36,7 @@ eg.
 ```
 
 5. Your SHARC will reboot and begin the update process.
+6. After a successful update, your SHARC will boot into its first boot protocol and then reboot into production mode.
 
 #### Update Process
 
@@ -50,8 +51,10 @@ Observe your SHARC's LED to determine the success or failure of the OTA update.
 
 ## Firmware List
 
-| id | date-time | board version | is OTA | file | comments |
+| id | date-time | board version | is OTA | is RTM | file | comments |
 | --- | --- | --- | --- | --- | --- |
-| 5c8db24 | 12/04/2023 21:00 | 105 | yes | 5c8db24_ota.bin | first OTA upgradable firmware |
-| 507764c | 12/04/2023 11:00 | 105 | yes | 507764c_ota.bin | initial firmware release supporting OTA |
+|  | 12/04/2023 13:30 | 105 | yes | yes | ?_ota.bin | OTA RTM |
+| ab0b610 | 12/04/2023 13:00 | 105 | yes | no | ab0b610_ota.bin | OTA firmware with post-update support |
+| 5c8db24 | 12/04/2023 12:00 | 105 | yes | no | 5c8db24_ota.bin | first OTA upgradable firmware |
+| 507764c | 12/04/2023 11:00 | 105 | yes | no | 507764c_ota.bin | initial firmware release supporting OTA |
 
