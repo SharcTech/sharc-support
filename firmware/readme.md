@@ -29,7 +29,7 @@ eg.
   "id": "abc123",
   "v": {
     "device.ota": {
-      "bin": "https://raw.githubusercontent.com/SharcTech/sharc-support/main/firmware/507764c_ota.bin"
+      "bin": "https://raw.githubusercontent.com/SharcTech/sharc-support/main/firmware/5c8db24_ota.bin"
     }
   }
 }
@@ -52,5 +52,6 @@ Observe your SHARC's LED to determine the success or failure of the OTA update.
 
 | id | date-time | board version | is OTA | file | comments |
 | --- | --- | --- | --- | --- | --- |
+| 5c8db24 | 12/04/2023 21:00 | 105 | yes | 5c8db24_ota.bin | first OTA upgradable firmware |
 | 507764c | 12/04/2023 11:00 | 105 | yes | 507764c_ota.bin | initial firmware release supporting OTA |
 
