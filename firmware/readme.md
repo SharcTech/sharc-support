@@ -52,7 +52,7 @@ Observe your SHARC's LED to determine the success or failure of the OTA update.
 ## Firmware List
 
 | id | date-time | board version | is OTA | is RTM | file | comments |
-| --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- | --- |
 | 72e3b89 | 12/04/2023 13:30 | 105 | yes | yes | 72e3b89_ota.bin | OTA RTM |
 | ab0b610 | 12/04/2023 13:00 | 105 | yes | no | ab0b610_ota.bin | OTA firmware with post-update support |
 | 5c8db24 | 12/04/2023 12:00 | 105 | yes | no | 5c8db24_ota.bin | first OTA upgradable firmware |
