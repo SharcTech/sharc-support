@@ -51,6 +51,6 @@ Observe your SHARC's LED to determine the success or failure of the OTA update.
 ## Firmware List
 
 | id | date-time | board version | is OTA | file | comments |
-| --- | --- | --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | 507764c | 12/04/2023 11:00 | 105 | yes | 507764c_ota.bin | initial firmware release supporting OTA |
 
