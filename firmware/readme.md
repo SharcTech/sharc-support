@@ -53,5 +53,6 @@ Observe your SHARC's LED to determine the success or failure of the OTA update.
 
 | id | date-time | board version | is OTA | is RTM | file | comments |
 | --- | --- | --- | --- | --- | --- | --- |
+| 8856501 | 12/06/2023 13:30 | 105 | yes | no | 8856501_ota.bin | OTA Test |
 | 69b6f60 | 12/06/2023 12:10 | 105 | yes | no | 69b6f60_ota.bin | OTA Test |
 
