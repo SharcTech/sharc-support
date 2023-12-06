@@ -7,7 +7,7 @@
 #### Start the Update
 
 1. Connect your SHARC to an MQTT broker.
-2. Identify your SHARC's serial number (eg. 48e7290b118c).
+2. Identify your SHARC's serial number (eg. `48e7290b118c`).
 3. Set your MQTT publish topic to `sharc/{your-sharc-serial-number}/cmd/action` (eg. `sharc/48e7290b118c/cmd/action`).
 4. Publish the following message with the appropriate firmware link.  Your SHARC must be able to access the URI without HTTP redirects.
 
@@ -29,7 +29,7 @@ eg.
   "id": "abc123",
   "v": {
     "device.ota": {
-      "bin": "https://raw.githubusercontent.com/SharcTech/sharc-support/main/firmware/72e3b89_ota.bin"
+      "bin": "https://raw.githubusercontent.com/SharcTech/sharc-support/main/firmware/69b6f60_ota.bin"
     }
   }
 }
@@ -53,8 +53,5 @@ Observe your SHARC's LED to determine the success or failure of the OTA update.
 
 | id | date-time | board version | is OTA | is RTM | file | comments |
 | --- | --- | --- | --- | --- | --- | --- |
-| 72e3b89 | 12/04/2023 13:30 | 105 | yes | yes | 72e3b89_ota.bin | OTA RTM |
-| ab0b610 | 12/04/2023 13:00 | 105 | yes | no | ab0b610_ota.bin | OTA firmware with post-update support |
-| 5c8db24 | 12/04/2023 12:00 | 105 | yes | no | 5c8db24_ota.bin | first OTA upgradable firmware |
-| 507764c | 12/04/2023 11:00 | 105 | yes | no | 507764c_ota.bin | initial firmware release supporting OTA |
+| 69b6f60 | 12/06/2023 12:10 | 105 | yes | no | 69b6f60_ota.bin | OTA Test |
 
