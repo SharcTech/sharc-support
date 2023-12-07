@@ -4,7 +4,13 @@
 
 ### OTA
 
-#### Start the Update
+[SHARC Over-The-Air Updates Diagram](./sharc_ota_diagram.pdf)
+
+#### App Update Instructions
+
+TODO  
+
+#### Manual Update Instructions
 
 1. Connect your SHARC to an MQTT broker.
 2. Identify your SHARC's serial number (eg. `48e7290b118c`).
@@ -36,9 +42,9 @@ eg.
 ```
 
 5. Your SHARC will reboot and begin the update process.
-6. After a successful update, your SHARC will boot into its first boot protocol and then reboot into production mode.
+6. After a successful update, your SHARC will boot into its first boot protocol and then reboot into production mode.  
 
-#### Update Process
+#### LED Status During Upgrade Process
 
 Observe your SHARC's LED to determine the success or failure of the OTA update.
 
