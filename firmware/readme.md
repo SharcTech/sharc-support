@@ -35,7 +35,7 @@ eg.
   "id": "abc123",
   "v": {
     "device.ota": {
-      "bin": "https://raw.githubusercontent.com/SharcTech/sharc-support/main/firmware/69b6f60_ota.bin"
+      "bin": "https://raw.githubusercontent.com/SharcTech/sharc-support/main/firmware/7f5d668_ota.bin"
     }
   }
 }
@@ -59,6 +59,6 @@ Observe your SHARC's LED to determine the success or failure of the OTA update.
 
 | id | date-time | board version | is OTA | is RTM | file | comments |
 | --- | --- | --- | --- | --- | --- | --- |
-| 8856501 | 12/06/2023 13:30 | 105 | yes | no | 8856501_ota.bin | OTA Test |
-| 69b6f60 | 12/06/2023 12:10 | 105 | yes | no | 69b6f60_ota.bin | OTA Test |
+| 3ddecbe | 12/07/2023 13:30 | 105 | yes | no | 3ddecbe_ota.bin | OTA Test |
+| 7f5d668 | 12/07/2023 13:00 | 105 | yes | no | 7f5d668_ota.bin | OTA Test |
 
