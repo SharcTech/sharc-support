@@ -44,8 +44,8 @@ Observe your SHARC's LED to determine the success or failure of the OTA update.
 
 ## Firmware List
 
-| id | date-time | board version | is OTA | is RTM | file | comments |
+| id | date-time | board version | is OTA | is RTM | comments |
 | --- | --- | --- | --- | --- | --- | --- |
-| 7171f13 | 12/08/2023 08:30 | 105 | yes | no | 7171f13_ota.bin | OTA Test |
-| 97045b4 | 12/08/2023 08:00 | 105 | yes | no | 97045b4_ota.bin | OTA Test |
+| [?](https://raw.githubusercontent.com/SharcTech/sharc-support/main/firmware/) | 12/08/2023 09:30 | 105 | yes | no | OTA Test |
+| [ace8d12](https://raw.githubusercontent.com/SharcTech/sharc-support/main/firmware/ace8d12_ota.bin) | 12/08/2023 09:15 | 105 | yes | no | OTA Test |
 
