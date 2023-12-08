@@ -47,7 +47,7 @@ Sharc hardware, firmware, and software related support and discussions.
 
 [Cloud Sharc Studio](https://sharc.tech/)
 
-[iOS Sharc Studio]() -- TODO: link
+[iOS Sharc Studio](https://apps.apple.com/us/app/sharc-studio/id6447310295)
 
 ## MQTT Namespace
 
