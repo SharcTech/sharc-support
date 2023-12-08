@@ -8,7 +8,24 @@
 
 #### App Update Instructions
 
-TODO  
+1. Connect your SHARC to an MQTT broker.
+2. Identify your SHARC's serial number (eg. `48e7290b118c`).
+3. Connect to your SHARC using MQTT on the [Sharc Studio App](https://apps.apple.com/us/app/sharc-studio/id6447310295)
+4. Go the Settings Tab
+5. Click on the `Upload Firmware` Button Located Near the Bottom
+6. Paste Your New Firmware .bin Link into the Text Box
+7. Click `Upload`
+8. Wait and Watch Your SHARC Device's LEDs to Ensure the Upgrade Finished Successfully - [LED Status During Upgrade Process](https://github.com/SharcTech/sharc-support/blob/main/firmware/readme.md#led-status-during-upgrade-process)
+
+#### [Sharc Tech](https://sharc.tech) Update Instructions
+
+1. Connect your SHARC to an MQTT broker.
+2. Identify your SHARC's serial number (eg. `48e7290b118c`).
+3. Connect to your SHARC using MQTT on [Sharc Tech](https://sharc.tech)
+4. Click the `Upload` Icon Located to the Right of the `Power` Icon 
+6. Paste Your New Firmware .bin Link into the Text Box
+7. Click `Update`
+8. Wait and Watch Your SHARC Device's LEDs to Ensure the Upgrade Finished Successfully - [LED Status During Upgrade Process](https://github.com/SharcTech/sharc-support/blob/main/firmware/readme.md#led-status-during-upgrade-process)
 
 #### Manual Update Instructions
 
