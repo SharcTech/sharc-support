@@ -28,19 +28,6 @@ TODO
 }
 ```
 
-eg.
-
-```
-{
-  "id": "abc123",
-  "v": {
-    "device.ota": {
-      "bin": "https://raw.githubusercontent.com/SharcTech/sharc-support/main/firmware/7f5d668_ota.bin"
-    }
-  }
-}
-```
-
 5. Your SHARC will reboot and begin the update process.
 6. After a successful update, your SHARC will boot into its first boot protocol and then reboot into production mode.  
 
@@ -59,6 +46,6 @@ Observe your SHARC's LED to determine the success or failure of the OTA update.
 
 | id | date-time | board version | is OTA | is RTM | file | comments |
 | --- | --- | --- | --- | --- | --- | --- |
-| 3ddecbe | 12/07/2023 13:30 | 105 | yes | no | 3ddecbe_ota.bin | OTA Test |
-| 7f5d668 | 12/07/2023 13:00 | 105 | yes | no | 7f5d668_ota.bin | OTA Test |
+| 7171f13 | 12/08/2023 08:30 | 105 | yes | no | 7171f13_ota.bin | OTA Test |
+| 97045b4 | 12/08/2023 08:00 | 105 | yes | no | 97045b4_ota.bin | OTA Test |
 
