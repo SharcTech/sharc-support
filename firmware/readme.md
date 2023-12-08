@@ -15,7 +15,7 @@
 5. Click on the `Upload Firmware` Button Located Near the Bottom
 6. Paste Your New Firmware .bin Link into the Text Box
 7. Click `Upload`
-8. Wait and Watch Your SHARC Device's LEDs to Ensure the Upgrade Finished Successfully (LED Status During Upgrade Process)[]
+8. Wait and Watch Your SHARC Device's LEDs to Ensure the Upgrade Finished Successfully (LED Status During Upgrade Process)[https://github.com/SharcTech/sharc-support/blob/main/firmware/readme.md#led-status-during-upgrade-process]
 
 #### Manual Update Instructions
 
