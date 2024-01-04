@@ -3,41 +3,48 @@ Sharc hardware, firmware, and software related support and discussions.
 
 ## Table of Contents
 
-- [MQTT Namespace](#mqtt-namespace)
-  - [MQTT Events](#mqtt-events)
-    - [MQTT Connect](#mqtt-connect)
-    - [MQTT Disconnect](#mqtt-disconnect)
-    - [Boot Counter](#boot-counter)
-    - [Network Interface](#network-interface)
-    - [Device Information](#device-information)
-    - [Sensor Values](#sensor-values)
-      - [Mode: Aggregate](#mode-aggregate)
-      - [Mode: Distinct](#mode-distinct)
-      - [Mode: Aggregate-Calibrated-Converted](#mode-aggregate-calibrated-converted)
-    - [Command Acknowledgement](#command-acknowledgement)
-    - [User Data](#user-data)
-  - [MQTT Commands](#mqtt-commands)
-    - [Actions](#actions)
-      - [Device Reset](#device-reset)
-      - [Configuration Save](#configuration-save)
-      - [Reset Digital Input Counters](#reset-digital-input-counters)
-      - [Publish IO Data](#publish-io-data)
-      - [Set User Data](#set-user-data)
-    - [Configuration Changes](#configuration-changes)
-    - [Sensor Configuration](#sensor-configuration)
-    - [All Sensors Report on Single Topic](#all-sensors-report-on-single-topic)
-    - [Each Sensor Reports on Individual Topic](#each-sensor-reports-on-individual-topic)
-    - [Digital Input - Switch](#digital-input---switch)
-    - [Digital Input - Rising Edge Persisted Counter](#digital-input---rising-edge-persisted-counter)
-    - [Digital Input - Falling Edge Accumulator](#digital-input---falling-edge-accumulator)
-    - [Analog Input - Custom Conversion](#analog-input---custom-conversion)
-    - [Network Example](#network-example)
-    - [Broker Example](#broker-example)
-- [Self-hosting Sharc Studio](#self-hosting-sharc-studio)
-  - [Allowing Insecure Connections](#if-not-using-localhost-to-connect-to-sharc-ui-you-must-allow-bluetooth-from-insecure-connection)
-  - [To Run Locally (MQTT Broker already setup | Without compose)](#to-run-locally-mqtt-broker-already-setup--without-compose)
-  - [To Run Locally (MQTT Broker already setup | With compose)](#to-run-locally-mqtt-broker-already-setup--with-compose)
-  - [To Run Locally (MQTT Broker not setup | With docker-compose)](#to-run-locally-mqtt-broker-not-setup--with-docker-compose)
+- [sharc-support](#sharc-support)
+  - [Table of Contents](#table-of-contents)
+  - [Links](#links)
+  - [MQTT Namespace](#mqtt-namespace)
+    - [MQTT EVENTS](#mqtt-events)
+      - [MQTT Connect](#mqtt-connect)
+      - [MQTT Disconnect](#mqtt-disconnect)
+      - [Boot Counter](#boot-counter)
+      - [Network Interface](#network-interface)
+      - [Device Information](#device-information)
+      - [MQTT Information](#mqtt-information)
+      - [Sensor Values](#sensor-values)
+        - [Mode: Aggregate](#mode-aggregate)
+        - [Mode: Distinct](#mode-distinct)
+        - [Mode: Aggregate-Calibrated-Converted](#mode-aggregate-calibrated-converted)
+      - [Command Acknowledgement](#command-acknowledgement)
+      - [User Data](#user-data)
+    - [MQTT COMMANDS](#mqtt-commands)
+      - [Actions](#actions)
+        - [OTA](#ota)
+        - [Device Network](#device-network)
+        - [Device Reset](#device-reset)
+        - [Configuration Save](#configuration-save)
+        - [Reset Digital Input Counters](#reset-digital-input-counters)
+        - [Publish IO Data](#publish-io-data)
+        - [Set User Data](#set-user-data)
+      - [Configuration Changes](#configuration-changes)
+      - [Sensor Configuration](#sensor-configuration)
+      - [All Sensors Report on Single Topic](#all-sensors-report-on-single-topic)
+      - [Each Sensor Reports on Individual Topic](#each-sensor-reports-on-individual-topic)
+      - [Digital Input - Switch](#digital-input---switch)
+      - [Digital Input - Rising Edge Persisted Counter](#digital-input---rising-edge-persisted-counter)
+      - [Digital Input - Falling Edge Accumulator](#digital-input---falling-edge-accumulator)
+      - [Analog Input - Custom Conversion](#analog-input---custom-conversion)
+        - [Network Example](#network-example)
+        - [Broker Example](#broker-example)
+  - [Self-hosting Sharc Studio](#self-hosting-sharc-studio)
+    - [If Not Using `localhost` To Connect To Sharc UI, You Must Allow Bluetooth From Insecure Connection](#if-not-using-localhost-to-connect-to-sharc-ui-you-must-allow-bluetooth-from-insecure-connection)
+      - [To enable this setting](#to-enable-this-setting)
+    - [To Run Locally (MQTT Broker already setup | Without compose)](#to-run-locally-mqtt-broker-already-setup--without-compose)
+    - [To Run Locally (MQTT Broker already setup | With compose)](#to-run-locally-mqtt-broker-already-setup--with-compose)
+    - [To Run Locally (MQTT Broker not setup | With docker-compose)](#to-run-locally-mqtt-broker-not-setup--with-docker-compose)
 
 ## Links
 
@@ -96,20 +103,20 @@ Payload:
 {
   "seq": 1,
   "v": {
-    "0": 0,
-    "1": 0,
-    "2": 0,
-    "3": 0,
-    "4": 0
+    "power_on": 0,
+    "hard_reset": 0,
+    "watchdog_reset": 0,
+    "deep_sleep": 0,
+    "soft_reset": 0
   }
 }
 ```
 
-`$.v.0` - [int] Power_On count.  
-`$.v.1` - [int] Hard count.  
-`$.v.2` - [int] WDT count.  
-`$.v.3` - [int] Deep_Sleep count.  
-`$.v.4` - [int] Soft count.  
+`$.v.power_on` - [int] Power_On count.  
+`$.v.hard_reset` - [int] Hard count.  
+`$.v.watchdog_reset` - [int] WDT count.  
+`$.v.deep_sleep` - [int] Deep_Sleep count.  
+`$.v.soft_reset` - [int] Soft count.  
 
 #### Network Interface
 
@@ -123,22 +130,30 @@ Payload:
 {
   "seq": 1,
   "v": {
+    "type": "WLAN",
     "static": false,
     "ip": "0.0.0.0",
     "gw": "0.0.0.0",
     "mask": "0.0.0.0",
     "dns": "0.0.0.0",
-    "mac": "deadbeef"
+    "mac": "deadbeef",
+    "quality": 100,
+    "ssid": "wifi-name",
+    "lan_fallback_s": 120
   }
 }
 ```
 
-`$.v.static` - [boolean] Whether the IP configuration is static or dynamic.  
+`$.v.type` - [string] Current network type of WLAN or LAN.  
+`$.v.static` - [bool] Whether the IP configuration is static or dynamic.  
 `$.v.ip` - [string] Device IP Address.  
 `$.v.gw` - [string] Gateway IP Address.  
 `$.v.mask` - [string] Subnet mask.  
 `$.v.dns` - [string] DNS Server IP Address.  
 `$.v.mac` - [string] Device Hardware Address.  
+`$.v.quality` - [int] Connection quality.  
+`$.v.ssid` - [string] (WLAN only)  Wifi network name.    
+`$.v.lan_fallback` - [int] (WLAN only)  Seconds to wait for Wifi connection before rebooting into LAN.  Zero to disable this feature.  
 
 #### Device Information
 
@@ -157,7 +172,7 @@ Payload:
     "serial": "{chip-id}",
     "hw": "105",
     "fw": "{git-head}",
-    "sw": "{git-head}"
+    "sw": "RTM/FROZEN"
   }
 }
 ```
@@ -168,6 +183,31 @@ Payload:
 `$.v.hw` - [string] Hardware version.  
 `$.v.fw` - [string] Firmware version.  
 `$.v.sw` - [string] Software version.  
+
+#### MQTT Information
+
+MQTT connection information, published upon connection.  
+
+Topic: `sharc/{{sharc_id}}/evt/mqtt`  
+Retain: `true`  
+Payload:  
+
+```json
+{
+  "seq": 1,
+  "v": {
+    "address": "192.168.5.5",
+    "port": 1883,
+    "user": "",
+    "anonymous": true
+  }
+}
+```
+
+`$.v.address` - [string] Broker address.  
+`$.v.port` - [int] Broker port.  
+`$.v.user` - [string] Username.  
+`$.v.anonymous` - [bool] Is connection anonymous.  
 
 #### Sensor Values
 
@@ -335,9 +375,62 @@ Commands with the `id` attribute are dropped.
 
 #### Actions
 
+##### OTA
+
+Initiates over-the-air updates over WIFI or Ethernet.  
+  
+Once the device receives this message, it will:
+
+* Reboot into update mode.
+* Download the new firmware binary.
+* Install the new firmware binary.
+* Reboot into first-run mode.
+* Reboot into production mode.
+
+Topic: `sharc/{{sharc_id}}/cmd/action`  
+Retain: `false`  
+Payload:  
+
+```json
+{
+  "id": "abc123",
+  "v": {
+    "device.ota": {
+      "bin": "direct-download-uri-to-binary"
+    }
+  }
+}
+```
+
+##### Device Network
+
+Select between WLAN and LAN network.  Device reset is required to take effect.    
+
+Topic: `sharc/{{sharc_id}}/cmd/action`  
+Retain: `false`  
+Payload:  
+
+```json
+{
+  "id": "abc123",
+  "v": { 
+    "device.network.wlan" : true
+  }
+}
+```
+
+```json
+{
+  "id": "abc123",
+  "v": { 
+    "device.network.lan" : true
+  }
+}
+```
+
 ##### Device Reset
 
-Discard configuration changes and reset device.  
+Discard configuration changes and reset device into MQTT.  
 
 Topic: `sharc/{{sharc_id}}/cmd/action`  
 Retain: `false`  
@@ -352,9 +445,16 @@ Payload:
 }
 ```
 
-##### Configuration Save
+```json
+{
+  "id": "abc123",
+  "v": { 
+    "device.reset.mqtt" : true
+  }
+}
+```
 
-Save configuration and reset device.    
+Discard configuration changes and reset device into BLE.  
 
 Topic: `sharc/{{sharc_id}}/cmd/action`  
 Retain: `false`  
@@ -364,7 +464,48 @@ Payload:
 {
   "id": "abc123",
   "v": { 
-    "cfg.save" : true
+    "device.reset.ble" : true
+  }
+}
+```
+
+##### Configuration Save
+
+Save configuration and reset device into MQTT.   
+
+Topic: `sharc/{{sharc_id}}/cmd/action`  
+Retain: `false`  
+Payload:  
+
+```json
+{
+  "id": "abc123",
+  "v": { 
+    "device.save" : true
+  }
+}
+```
+
+```json
+{
+  "id": "abc123",
+  "v": { 
+    "device.save.mqtt" : true
+  }
+}
+```
+
+Save configuration and reset device into BLE.    
+
+Topic: `sharc/{{sharc_id}}/cmd/action`  
+Retain: `false`  
+Payload:  
+
+```json
+{
+  "id": "abc123",
+  "v": { 
+    "device.save.ble" : true
   }
 }
 ```
