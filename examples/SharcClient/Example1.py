@@ -1,4 +1,4 @@
-from SharcClient.Client import Client
+from examples.SharcClient.Client import Client
 import time
 
 

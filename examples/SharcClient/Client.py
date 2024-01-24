@@ -29,11 +29,11 @@ class Client:
 		return self._is_connected
 
 	def connect(self):
-		self._mqttc.loop_start()
 		self._mqttc.on_connect = self._on_connect
 		self._mqttc.on_message = self._on_message
 		self._mqttc.on_disconnect = self._on_disconnect
 		self._mqttc.connect(host=self._host, port=self._port, keepalive=self._keepalive)
+		self._mqttc.loop_start()
 
 	def disconnect(self):
 		self._mqttc.disconnect()
