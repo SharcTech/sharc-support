@@ -1,0 +1,2 @@
+# ignore compiled bytecode stuff
+__pycache__/
