@@ -63,6 +63,7 @@ Observe your SHARC's LED to determine the success or failure of the OTA update.
 
 | id | date-time | board version | is OTA | is RTM | comments |
 | --- | --- | --- | --- | --- | --- |
+| [a488b9c](https://raw.githubusercontent.com/SharcTech/sharc-support/main/firmware/a488b9c_ota.bin) | 01/31/2024 09:00 | 105 | yes | no | Feature: Secure SHARC adoption. |
 | [76e6ab7](https://raw.githubusercontent.com/SharcTech/sharc-support/main/firmware/76e6ab7_ota.bin) | 12/08/2023 10:30 | 105 | yes | no | Feature: WLAN to LAN fallback. |
 | [f7dcf72](https://raw.githubusercontent.com/SharcTech/sharc-support/main/firmware/f7dcf72_ota.bin) | 12/08/2023 09:30 | 105 | yes | no | OTA release. |
 | [ace8d12](https://raw.githubusercontent.com/SharcTech/sharc-support/main/firmware/ace8d12_ota.bin) | 12/08/2023 09:15 | 105 | yes | no | OTA release. |
