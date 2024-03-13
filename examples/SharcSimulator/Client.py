@@ -189,3 +189,7 @@ class Client:
 
 	def send_io_s3(self, v, u):
 		self._send_io_distinct("s3", v, u)
+
+	def send_user_data(self, value):
+		self._mqttc.publish(self._make_evt_topic("user"), self._make_evt_message_string(value), retain=False)
+
