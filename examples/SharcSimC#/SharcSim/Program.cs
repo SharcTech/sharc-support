@@ -9,8 +9,8 @@ namespace SharcSim
 {
     public class Sharc
     {
-        public string SharcID = "SharcTest";
-        public string BrokerConnection = "wss.sharc.tech:9001";
+        public string SharcID = "";
+        public string BrokerConnection = "";
 
         public async Task<(string SharcID, string BrokerConnection)> SharcMenu()
         {
@@ -210,6 +210,7 @@ namespace SharcSim
                 else if (choice == "7")
                 {
                     var turnOff = new MqttApplicationMessageBuilder()
+                        .WithRetainFlag()
                         .WithTopic($"sharc/{SharcID}/evt/avail")
                         .WithPayload("{\"seq\": 6, \"v\": false}")
                         .Build();
@@ -220,6 +221,7 @@ namespace SharcSim
                     Console.Clear();
                     Console.WriteLine($"Sending avail true as {SharcID}.");
                     var turnOn = new MqttApplicationMessageBuilder()
+                        .WithRetainFlag()
                         .WithTopic($"sharc/{SharcID}/evt/avail")
                         .WithPayload("{\"seq\": 6, \"v\": true}")
                         .Build();
@@ -242,6 +244,14 @@ namespace SharcSim
                 }
                 else if (choice == "8")
                 {
+                    var avail = new MqttApplicationMessageBuilder()
+                        .WithRetainFlag()
+                        .WithTopic($"sharc/{SharcID}/evt/avail")
+                        .WithPayload("{\"seq\": 6, \"v\": true}")
+                        .Build();
+                    Console.Clear();
+                    Console.WriteLine($"Sending /evt/avail message.");
+                    await mqttClient.PublishAsync(avail, CancellationToken.None);
                     Console.Clear();
                     Console.WriteLine($"Sending /evt/io messages.");
                     var s0 = new MqttApplicationMessageBuilder()
@@ -265,6 +275,7 @@ namespace SharcSim
                         .Build();
                     await mqttClient.PublishAsync(s3, CancellationToken.None);
                     var ver = new MqttApplicationMessageBuilder()
+                        .WithRetainFlag()
                         .WithTopic($"sharc/{SharcID}/evt/ver")
                         .WithPayload(
                             $"{{\"seq\": 7, \"v\": {{\"serial\": \"{SharcID}\", \"sw\": \"DEV/FROZEN\", \"hw\": \"105\", \"fw\": \"cb6c2a3\", \"model\": \"SHARC\", \"mfg\": \"Frenzy Engineering\"}}}}")
@@ -273,6 +284,7 @@ namespace SharcSim
                     Console.WriteLine($"Sending /evt/ver message.");
                     await mqttClient.PublishAsync(ver, CancellationToken.None);
                     var rc = new MqttApplicationMessageBuilder()
+                        .WithRetainFlag()
                         .WithTopic($"sharc/{SharcID}/evt/rc")
                         .WithPayload(
                             $"{{\"seq\": 8, \"v\": {{\"watchdog_reset\": 1, \"power_on\": 23, \"deep_sleep\": 0, \"soft_reset\": 0, \"hard_reset\": 25}}}}")
@@ -281,6 +293,7 @@ namespace SharcSim
                     Console.WriteLine($"Sending /evt/rc message.");
                     await mqttClient.PublishAsync(rc, CancellationToken.None);
                     var net = new MqttApplicationMessageBuilder()
+                        .WithRetainFlag()
                         .WithTopic($"sharc/{SharcID}/evt/net")
                         .WithPayload(
                             $"{{\"seq\": 9, \"v\": {{\"dns\": \"192.168.0.1\", \"mask\": \"255.255.255.0\", \"mac\": \"{SharcID}\", \"quality\": 100, \"ip\": \"192.168.0.99\", \"type\": \"LAN\", \"static\": false, \"gw\": \"192.168.0.1\"}}}}")
@@ -289,6 +302,7 @@ namespace SharcSim
                     Console.WriteLine($"Sending /evt/net message.");
                     await mqttClient.PublishAsync(net, CancellationToken.None);
                     var mqttSettings = new MqttApplicationMessageBuilder()
+                        .WithRetainFlag()
                         .WithTopic($"sharc/{SharcID}/evt/mqtt")
                         .WithPayload(
                             "{\"seq\": 10, \"v\": {\"user\": \"\", \"anonymous\": true, \"pass\": \"\", \"address\": \"192.168.0.1\", \"port\": 1883}}")
@@ -297,12 +311,14 @@ namespace SharcSim
                     Console.WriteLine($"Sending /evt/mqtt message.");
                     await mqttClient.PublishAsync(mqttSettings, CancellationToken.None);
                     var user = new MqttApplicationMessageBuilder()
+                        .WithRetainFlag()
                         .WithTopic($"sharc/{SharcID}/evt/user")
                         .WithPayload("{\"seq\": 1, \"v\": {\"since_boot_s\": 30}}")
                         .Build();
                     Console.Clear();
                     Console.WriteLine($"Sending /evt/user message.");
                     await mqttClient.PublishAsync(mqttSettings, CancellationToken.None);
+
                     bool goBack = false;
                     while (!goBack)
                     {
@@ -320,6 +336,7 @@ namespace SharcSim
                 else if (choice == "9")
                 {
                     var turnOff = new MqttApplicationMessageBuilder()
+                        .WithRetainFlag()
                         .WithTopic($"sharc/{SharcID}/evt/avail")
                         .WithPayload("{\"seq\": 6, \"v\": false}")
                         .Build();
