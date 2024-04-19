@@ -1,0 +1,229 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "Microsoft.DotNet.ILCompiler/8.0.3": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.DotNet.ILCompiler.props": {}
+        }
+      },
+      "Microsoft.NET.ILLink.Tasks/8.0.3": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
+      "MQTTnet/3.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/MQTTnet.dll": {
+            "related": ".deps.json"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/MQTTnet.dll": {
+            "related": ".deps.json"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Microsoft.DotNet.ILCompiler/8.0.3": {
+      "sha512": "LGNORlVTRa2FDy3OcP3Xu1ZSJW4tz2ATO3WrHUwHg7kxbR9HChezgJ51CwZJQt8+Yp6acp32FDC/FTPdFDOumQ==",
+      "type": "package",
+      "path": "microsoft.dotnet.ilcompiler/8.0.3",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/BuildFrameworkNativeObjects.proj",
+        "build/Microsoft.DotNet.ILCompiler.SingleEntry.targets",
+        "build/Microsoft.DotNet.ILCompiler.props",
+        "build/Microsoft.NETCore.Native.Publish.targets",
+        "build/Microsoft.NETCore.Native.Unix.targets",
+        "build/Microsoft.NETCore.Native.Windows.targets",
+        "build/Microsoft.NETCore.Native.targets",
+        "build/NativeAOT.natstepfilter",
+        "build/NativeAOT.natvis",
+        "build/WindowsAPIs.txt",
+        "build/findvcvarsall.bat",
+        "microsoft.dotnet.ilcompiler.8.0.3.nupkg.sha512",
+        "microsoft.dotnet.ilcompiler.nuspec",
+        "runtime.json",
+        "tools/netstandard/ILCompiler.Build.Tasks.deps.json",
+        "tools/netstandard/ILCompiler.Build.Tasks.dll",
+        "tools/netstandard/ILCompiler.Build.Tasks.pdb"
+      ]
+    },
+    "Microsoft.NET.ILLink.Tasks/8.0.3": {
+      "sha512": "0kwNg0LBIvVTx9A2mo9Mnw4wLGtaeQgjSz5P13bOOwdWPPLe9HzI+XTkwiMhS7iQCM6X4LAbFR76xScaMw0MrA==",
+      "type": "package",
+      "path": "microsoft.net.illink.tasks/8.0.3",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "Sdk/Sdk.props",
+        "THIRD-PARTY-NOTICES.TXT",
+        "analyzers/dotnet/cs/ILLink.CodeFixProvider.dll",
+        "analyzers/dotnet/cs/ILLink.RoslynAnalyzer.dll",
+        "build/Microsoft.NET.ILLink.Analyzers.props",
+        "build/Microsoft.NET.ILLink.Tasks.props",
+        "build/Microsoft.NET.ILLink.targets",
+        "microsoft.net.illink.tasks.8.0.3.nupkg.sha512",
+        "microsoft.net.illink.tasks.nuspec",
+        "tools/net472/ILLink.Tasks.dll",
+        "tools/net472/ILLink.Tasks.dll.config",
+        "tools/net472/Mono.Cecil.Mdb.dll",
+        "tools/net472/Mono.Cecil.Pdb.dll",
+        "tools/net472/Mono.Cecil.Rocks.dll",
+        "tools/net472/Mono.Cecil.dll",
+        "tools/net472/Sdk/Sdk.props",
+        "tools/net472/System.Buffers.dll",
+        "tools/net472/System.Collections.Immutable.dll",
+        "tools/net472/System.Memory.dll",
+        "tools/net472/System.Numerics.Vectors.dll",
+        "tools/net472/System.Reflection.Metadata.dll",
+        "tools/net472/System.Runtime.CompilerServices.Unsafe.dll",
+        "tools/net472/build/Microsoft.NET.ILLink.Analyzers.props",
+        "tools/net472/build/Microsoft.NET.ILLink.Tasks.props",
+        "tools/net472/build/Microsoft.NET.ILLink.targets",
+        "tools/net8.0/ILLink.Tasks.deps.json",
+        "tools/net8.0/ILLink.Tasks.dll",
+        "tools/net8.0/Mono.Cecil.Mdb.dll",
+        "tools/net8.0/Mono.Cecil.Pdb.dll",
+        "tools/net8.0/Mono.Cecil.Rocks.dll",
+        "tools/net8.0/Mono.Cecil.dll",
+        "tools/net8.0/Sdk/Sdk.props",
+        "tools/net8.0/build/Microsoft.NET.ILLink.Analyzers.props",
+        "tools/net8.0/build/Microsoft.NET.ILLink.Tasks.props",
+        "tools/net8.0/build/Microsoft.NET.ILLink.targets",
+        "tools/net8.0/illink.deps.json",
+        "tools/net8.0/illink.dll",
+        "tools/net8.0/illink.runtimeconfig.json",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "MQTTnet/3.1.2": {
+      "sha512": "074AmNXQSs6S3vKyWqYIVvVCeyydCYhOLqfTfRXTaOihQTLAeKRnZh8c3Xhsvct4Rn+tCORFpUdLE35lH4c5Aw==",
+      "type": "package",
+      "path": "mqttnet/3.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "images/Logo_128x128.png",
+        "lib/net452/MQTTnet.dll",
+        "lib/net461/MQTTnet.dll",
+        "lib/net5.0/MQTTnet.deps.json",
+        "lib/net5.0/MQTTnet.dll",
+        "lib/netcoreapp3.1/MQTTnet.deps.json",
+        "lib/netcoreapp3.1/MQTTnet.dll",
+        "lib/netstandard1.3/MQTTnet.deps.json",
+        "lib/netstandard1.3/MQTTnet.dll",
+        "lib/netstandard2.0/MQTTnet.deps.json",
+        "lib/netstandard2.0/MQTTnet.dll",
+        "lib/netstandard2.1/MQTTnet.deps.json",
+        "lib/netstandard2.1/MQTTnet.dll",
+        "lib/uap10.0/MQTTnet.dll",
+        "lib/uap10.0/MQTTnet.pri",
+        "mqttnet.3.1.2.nupkg.sha512",
+        "mqttnet.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "MQTTnet >= 3.1.2",
+      "Microsoft.DotNet.ILCompiler >= 8.0.3",
+      "Microsoft.NET.ILLink.Tasks >= 8.0.3"
+    ]
+  },
+  "packageFolders": {
+    "/Users/nickamenda/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/nickamenda/RiderProjects/SharcSim/SharcSim/SharcSim.csproj",
+      "projectName": "SharcSim",
+      "projectPath": "/Users/nickamenda/RiderProjects/SharcSim/SharcSim/SharcSim.csproj",
+      "packagesPath": "/Users/nickamenda/.nuget/packages/",
+      "outputPath": "/Users/nickamenda/RiderProjects/SharcSim/SharcSim/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/nickamenda/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "dependencies": {
+          "MQTTnet": {
+            "target": "Package",
+            "version": "[3.1.2, )"
+          },
+          "Microsoft.DotNet.ILCompiler": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[8.0.3, )",
+            "autoReferenced": true
+          },
+          "Microsoft.NET.ILLink.Tasks": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[8.0.3, )",
+            "autoReferenced": true
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "runtime.osx-arm64.Microsoft.DotNet.ILCompiler",
+            "version": "[8.0.3, 8.0.3]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/Users/nickamenda/.dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
