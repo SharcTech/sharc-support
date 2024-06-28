@@ -1,2 +1,6 @@
 # ignore compiled bytecode stuff
 __pycache__/
+examples/SharcSimC#/SharcSim/obj
+examples/SharcSimC#/SharcSim/bin
+.idea/
+sharc-support.sln
