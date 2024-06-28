@@ -4,7 +4,7 @@ import random
 
 
 SHARC_ID = "deadbeef0000"
-MQTT_HOST = "wss.sharc.tech"
+MQTT_HOST = "192.168.111.46"
 MQTT_PORT = 1883
 
 
