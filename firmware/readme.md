@@ -63,6 +63,7 @@ Observe your SHARC's LED to determine the success or failure of the OTA update.
 
 | id | date-time | board version | is OTA | is RTM | comments |
 | --- | --- | --- | --- | --- | --- |
+| [4469b72](https://raw.githubusercontent.com/SharcTech/sharc-support/main/firmware/4469b72_ota.bin) | 06/28/2024 00:00 | 105 | yes | no | I/O time delta feature. |
 | [8474e08](https://raw.githubusercontent.com/SharcTech/sharc-support/main/firmware/8474e08_ota.bin) | 04/08/2024 00:00 | 105 | yes | no | TCP socket improvements. |
 | [2253329](https://raw.githubusercontent.com/SharcTech/sharc-support/main/firmware/2253329_ota.bin) | 02/29/2024 15:00 | 105 | yes | no | WLAN improvements. |
 | [cb6c2a3](https://raw.githubusercontent.com/SharcTech/sharc-support/main/firmware/cb6c2a3_ota.bin) | 02/13/2024 22:00 | 105 | yes | no | Secure SHARC adoption bugfix. |
