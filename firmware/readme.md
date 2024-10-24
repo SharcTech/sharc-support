@@ -63,6 +63,7 @@ Observe your SHARC's LED to determine the success or failure of the OTA update.
 
 | id | date-time | board version | is OTA | is RTM | comments |
 | --- | --- | --- | --- | --- | --- |
+| [1ab1096](https://raw.githubusercontent.com/SharcTech/sharc-support/main/firmware/1ab1096_ota.bin) | 09/22/2024 00:00 | 105 | yes | no | I/O time delta higher resolution. |
 | [763fe04](https://raw.githubusercontent.com/SharcTech/sharc-support/main/firmware/763fe04_ota.bin) | 09/22/2024 00:00 | 105 | yes | no | File logger. |
 | [9478ff9](https://raw.githubusercontent.com/SharcTech/sharc-support/main/firmware/9478ff9_ota.bin) | 08/20/2024 00:00 | 105 | yes | no | MQTT SSL support. |
 | [4469b72](https://raw.githubusercontent.com/SharcTech/sharc-support/main/firmware/4469b72_ota.bin) | 06/28/2024 00:00 | 105 | yes | no | I/O time delta reporting. |
